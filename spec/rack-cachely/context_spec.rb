@@ -23,7 +23,7 @@ describe Rack::Cachely::Context do
       before do
         Rack::Cachely.config.enabled = true
         @env = { 'rack-cachely.perform_caching' => true }
-        Rack::Cachely::Store.stub(get: true)
+        Rack::Cachely::Store.stub(:get => true)
       end
 
       context 'without no-cachely param' do

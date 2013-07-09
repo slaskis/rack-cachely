@@ -21,7 +21,7 @@ module Rack
         end
         results = @app.call(@env)
         if self.perform_caching? && is_cacheable?(results)
-          Rack::Cachely::Store.post(key, results, age: @age.to_i)
+          Rack::Cachely::Store.post(key, results, :age => @age.to_i)
         end
         return results
       end

@@ -5,7 +5,11 @@ module Rack
       attr_accessor :options
 
       def initialize(options = {})
-        self.options = {ignore_query_params: [], allow_query_params: [], timeout: 1.0}
+        self.options = {
+          :ignore_query_params => [],
+          :allow_query_params => [],
+          :timeout => 1.0
+        }
         options.each do |key, value|
           self.send("#{key}=", value)
         end

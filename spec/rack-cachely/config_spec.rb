@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe Rack::Cachely::Config do
 
-  let(:config) { Rack::Cachely::Config.new(foo: 'bar') }
+  let(:config) { Rack::Cachely::Config.new(:foo => 'bar') }
 
   describe "method_missing" do
-  
+
     it "returns a value from the options" do
       config.foo.should eql("bar")
     end
@@ -18,7 +18,7 @@ describe Rack::Cachely::Config do
       config.foo = 'FOO'
       config.foo.should eql("FOO")
     end
-  
+
   end
 
 
